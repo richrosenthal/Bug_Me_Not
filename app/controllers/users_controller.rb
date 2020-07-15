@@ -11,7 +11,7 @@ class UsersController < ApplicationController
       #login the user
       session[:user_id] = @user.id
       #add a redirect path here
-      redirect_to users_path
+      #redirect_to users_path
     else
       render :new
     end

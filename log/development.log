@@ -936,3 +936,69 @@ puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
 puma (4.3.5) lib/puma/server.rb:472:in `process_client'
 puma (4.3.5) lib/puma/server.rb:328:in `block in run'
 puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/users" for ::1 at 2020-07-15 12:25:30 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"BNXgHr6V97YqOklcDRMrdGjAbjlQ3cGnZCvqLvmQjUk6X7yVlyNr1R90Pr4QcStiPYJt2Nv86JBGrs/oPUcL+w==", "user"=>{"username"=>"richrosenthal", "email"=>"richard.rosenthal@acd.ccac.edu", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "richrosenthal"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 799)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 276ms (Views: 10.2ms | ActiveRecord: 0.8ms | Allocations: 14913)
+
+
+Started POST "/users" for ::1 at 2020-07-15 12:26:08 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"jFChQSPyvcNVH3rSbWlynvg8UNjiZ3RhsGwWbd4xQKay2v3KCkQhoGBRDTBwC3KIrX5TOWlGXVaS6TOrGubGFA==", "user"=>{"username"=>"Summer", "email"=>"summer@smithhousehold.com", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Summer"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "Summer"], ["email", "summer@smithhousehold.com"], ["password_digest", "$2a$12$xmbiWm5aU7QhstVO3F00muO7qwnUAVNtgd00vz5/vzv/iSedziA7e"], ["created_at", "2020-07-15 16:26:08.765625"], ["updated_at", "2020-07-15 16:26:08.765625"]]
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:10:in `create'
+No template found for UsersController#create, rendering head :no_content
+Completed 204 No Content in 254ms (ActiveRecord: 1.8ms | Allocations: 5139)
+
+
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/" for ::1 at 2020-07-15 12:27:06 -0400
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#home as HTML
+  Rendering sessions/home.html.erb within layouts/application
+  Rendered sessions/home.html.erb within layouts/application (Duration: 4.3ms | Allocations: 643)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 31ms (Views: 25.3ms | ActiveRecord: 0.0ms | Allocations: 8758)
+
+
+Started GET "/login" for ::1 at 2020-07-15 12:27:07 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/login.html.erb within layouts/application
+  Rendered sessions/login.html.erb within layouts/application (Duration: 8.4ms | Allocations: 2745)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 29ms (Views: 19.0ms | ActiveRecord: 0.6ms | Allocations: 11689)
+
+
+Started POST "/users" for ::1 at 2020-07-15 12:27:15 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"39eeshk3kvuTnjYdFtrMgiSR11IQr3y47raLnIZS5yKPBRIwvnuG1ArB48wQhgC39D2ngwFL+qUGOOacVYdfUw==", "user"=>{"username"=>"Summer", "email"=>"summer@smithhousehold.com", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Summer"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1039)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 265ms (Views: 11.7ms | ActiveRecord: 0.3ms | Allocations: 9567)
+
+
