@@ -6,14 +6,18 @@ class UsersController < ApplicationController
 
   #signup users
   def create
-
-    @user.save
+    @user = User.new(user_params)
+    if @user.save
+      @login the user
+      session[:user_id] = @user.id
+    else
+      render :new
   end
 
   #private method
   private
 
- #adds strong params <- Don't forget this again....for real 
+ #adds strong params <- Don't forget this again....for real
   def user_params
     params.require(:user).permit(:username, :email, :password)
   end
