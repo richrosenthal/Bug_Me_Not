@@ -8,15 +8,17 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      @login the user
+      #login the user
       session[:user_id] = @user.id
-      #add a redirect path here 
+      #add a redirect path here
+      redirect_to users_path
     else
       render :new
-  end
+    end
+   end
 
   #private method
-  private
+private
 
  #adds strong params <- Don't forget this again....for real
   def user_params

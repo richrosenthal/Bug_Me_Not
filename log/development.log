@@ -739,3 +739,200 @@ Processing by UsersController#new as HTML
 Completed 200 OK in 106ms (Views: 89.5ms | ActiveRecord: 0.8ms | Allocations: 14342)
 
 
+Started GET "/login" for ::1 at 2020-07-14 21:52:44 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/login.html.erb within layouts/application
+  Rendered sessions/login.html.erb within layouts/application (Duration: 6.2ms | Allocations: 1373)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 34ms (Views: 23.9ms | ActiveRecord: 0.0ms | Allocations: 10509)
+
+
+Started GET "/signup" for ::1 at 2020-07-14 21:52:58 -0400
+  
+SyntaxError (/Users/richardrosenthal/Desktop/Rails_Project/Bug_Me_Not/app/controllers/users_controller.rb:11: syntax error, unexpected tIDENTIFIER, expecting end
+      @login the user
+             ^~~
+/Users/richardrosenthal/Desktop/Rails_Project/Bug_Me_Not/app/controllers/users_controller.rb:26: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/users_controller.rb:11: syntax error, unexpected tIDENTIFIER, expecting end
+app/controllers/users_controller.rb:26: syntax error, unexpected end-of-input, expecting end
+app/controllers/users_controller.rb:11: syntax error, unexpected tIDENTIFIER, expecting end
+app/controllers/users_controller.rb:26: syntax error, unexpected end-of-input, expecting end
+app/controllers/users_controller.rb:11: syntax error, unexpected tIDENTIFIER, expecting end
+app/controllers/users_controller.rb:26: syntax error, unexpected end-of-input, expecting end
+Started GET "/" for ::1 at 2020-07-14 21:53:09 -0400
+Processing by SessionsController#home as HTML
+  Rendering sessions/home.html.erb within layouts/application
+  Rendered sessions/home.html.erb within layouts/application (Duration: 1.0ms | Allocations: 179)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 11.1ms | ActiveRecord: 0.0ms | Allocations: 4235)
+
+
+Started GET "/signup" for ::1 at 2020-07-14 21:53:24 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+SyntaxError (/Users/richardrosenthal/Desktop/Rails_Project/Bug_Me_Not/app/controllers/users_controller.rb:26: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/users_controller.rb:26: syntax error, unexpected end-of-input, expecting end
+app/controllers/users_controller.rb:26: syntax error, unexpected end-of-input, expecting end
+app/controllers/users_controller.rb:26: syntax error, unexpected end-of-input, expecting end
+Started GET "/" for ::1 at 2020-07-14 21:53:56 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#home as HTML
+  Rendering sessions/home.html.erb within layouts/application
+  Rendered sessions/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 66)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 8.1ms | ActiveRecord: 0.0ms | Allocations: 4070)
+
+
+Started GET "/signup" for ::1 at 2020-07-14 21:53:57 -0400
+  
+SyntaxError (/Users/richardrosenthal/Desktop/Rails_Project/Bug_Me_Not/app/controllers/users_controller.rb:24: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/users_controller.rb:24: syntax error, unexpected end-of-input, expecting end
+app/controllers/users_controller.rb:24: syntax error, unexpected end-of-input, expecting end
+app/controllers/users_controller.rb:24: syntax error, unexpected end-of-input, expecting end
+Started GET "/" for ::1 at 2020-07-14 21:54:11 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#home as HTML
+  Rendering sessions/home.html.erb within layouts/application
+  Rendered sessions/home.html.erb within layouts/application (Duration: 0.2ms | Allocations: 65)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 9.0ms | ActiveRecord: 0.0ms | Allocations: 4113)
+
+
+Started GET "/signup" for ::1 at 2020-07-14 21:54:12 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1096)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 25ms (Views: 12.4ms | ActiveRecord: 0.6ms | Allocations: 10324)
+
+
+Started POST "/users" for ::1 at 2020-07-14 21:54:24 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"QevSJ6mIAMrfnGuF3xOKe2U1YU7cme0nCDKmwKOao4kROV6lDsQU5UbDvlTZT0ZOtZkRn819azrgvMvAcE8b+A==", "user"=>{"username"=>"richrosenthal", "email"=>"richard.rosenthal@acd.ccac.edu", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+Completed 500 Internal Server Error in 179ms (ActiveRecord: 0.0ms | Allocations: 98305)
+
+
+  
+NameError (undefined local variable or method `user_params' for #<UsersController:0x00007fba26848090>
+Did you mean?  user_path):
+  
+app/controllers/users_controller.rb:9:in `create'
+Started POST "/users" for ::1 at 2020-07-15 12:17:29 -0400
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"+YN0Mbj5U5+yJ3nuwIxVME7+tGfXtFRozqiRckY2d4rHCSi6kU/P/IdpDgzd7lUmG7y3hlyVfV/sLbS0guHxOA==", "user"=>{"username"=>"richrosenthal", "email"=>"richard.rosenthal@acd.ccac.edu", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+Completed 500 Internal Server Error in 247ms (ActiveRecord: 0.0ms | Allocations: 98241)
+
+
+  
+NameError (undefined local variable or method `user_params' for #<UsersController:0x00007fba24416b68>
+Did you mean?  user_path):
+  
+app/controllers/users_controller.rb:9:in `create'
+Started GET "/signup" for ::1 at 2020-07-15 12:22:00 -0400
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/Users/richardrosenthal/Desktop/Rails_Project/Bug_Me_Not/app/controllers/users_controller.rb:28: syntax error, unexpected end, expecting end-of-input):
+  
+app/controllers/users_controller.rb:28: syntax error, unexpected end, expecting end-of-input
+app/controllers/users_controller.rb:28: syntax error, unexpected end, expecting end-of-input
+app/controllers/users_controller.rb:28: syntax error, unexpected end, expecting end-of-input
+Started GET "/signup" for ::1 at 2020-07-15 12:22:32 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 11.7ms | Allocations: 2778)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 66ms (Views: 57.2ms | ActiveRecord: 0.5ms | Allocations: 15046)
+
+
+Started POST "/users" for ::1 at 2020-07-15 12:22:39 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"BNXgHr6V97YqOklcDRMrdGjAbjlQ3cGnZCvqLvmQjUk6X7yVlyNr1R90Pr4QcStiPYJt2Nv86JBGrs/oPUcL+w==", "user"=>{"username"=>"richrosenthal", "email"=>"richard.rosenthal@acd.ccac.edu", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+Completed 500 Internal Server Error in 162ms (ActiveRecord: 0.0ms | Allocations: 98267)
+
+
+  
+NameError (undefined local variable or method `user_params' for #<UsersController:0x00007fe1b8835d78>
+Did you mean?  user_path):
+  
+app/controllers/users_controller.rb:9:in `create'
+Started POST "/users" for ::1 at 2020-07-15 12:24:04 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"BNXgHr6V97YqOklcDRMrdGjAbjlQ3cGnZCvqLvmQjUk6X7yVlyNr1R90Pr4QcStiPYJt2Nv86JBGrs/oPUcL+w==", "user"=>{"username"=>"richrosenthal", "email"=>"richard.rosenthal@acd.ccac.edu", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "richrosenthal"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "richrosenthal"], ["email", "richard.rosenthal@acd.ccac.edu"], ["password_digest", "$2a$12$Hf/87tNaGbLnaKM3reXTJ.fnwP74ioUJ6KFAvZQqR7VAXMo5M//j."], ["created_at", "2020-07-15 16:24:04.844763"], ["updated_at", "2020-07-15 16:24:04.844763"]]
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:10:in `create'
+Redirected to http://localhost:3000/users
+Completed 302 Found in 275ms (ActiveRecord: 2.5ms | Allocations: 9189)
+
+
+Started GET "/users" for ::1 at 2020-07-15 12:24:04 -0400
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for UsersController):
+  
+actionpack (6.0.3.2) lib/abstract_controller/base.rb:131:in `process'
+actionview (6.0.3.2) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.3.2) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.2) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.2) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.2) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.2) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.2) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.2) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.2) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3.2) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.2) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
