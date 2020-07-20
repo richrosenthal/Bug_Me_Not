@@ -1,7 +1,18 @@
 <h1>Submit Update for <%= @update.ticket.title %> - <%= @update.ticket.project.name %> </h1>
 <%# This should be a comment  %>
 
-<%= render partial: 'layouts/errors', locals: {object: @update} %> 
+<%= render partial: 'layouts/errors', locals: {object: @update} %>
+
+<%= form_for(@update) do |f| %>
+  <% if params[:ticket_id] %>
+    <%= f.hidden_field :ticket_id %>
+  <% else %>
+   <div>
+       <%= f.label :ticket_id, "Select a Ticket to update" %>
+       <%= f.collection_select :ticket_id, Ticket.all, :id, :title, include_blank: true %>
+   </div>
+   <% end %> 
+
 <%= form_for(@update) do |f| %>
 
 <div>
