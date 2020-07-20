@@ -1039,3 +1039,130 @@ Processing by SessionsController#home as HTML
 Completed 200 OK in 10ms (Views: 9.6ms | ActiveRecord: 0.0ms | Allocations: 3975)
 
 
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateProjects (20200720014010)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "projects" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200720014010"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateTickets (20200720014925)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "tickets" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "description" varchar, "is_complete" boolean, "project_id" integer NOT NULL, "user_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_8ef7458990"
+FOREIGN KEY ("project_id")
+  REFERENCES "projects" ("id")
+, CONSTRAINT "fk_rails_538a036fb9"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_tickets_on_project_id" ON "tickets" ("project_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_tickets_on_user_id" ON "tickets" ("user_id")[0m
+  [1m[36mprimary::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200720014925"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateUpdates (20200720015136)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "updates" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "content" varchar, "user_id" integer NOT NULL, "ticket_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_f68a6e4408"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_84fc495591"
+FOREIGN KEY ("ticket_id")
+  REFERENCES "tickets" ("id")
+)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_updates_on_user_id" ON "updates" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_updates_on_ticket_id" ON "updates" ("ticket_id")[0m
+  [1m[36mprimary::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200720015136"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2020-07-19 22:08:27 -0400
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#home as HTML
+  Rendering sessions/home.html.erb within layouts/application
+  Rendered sessions/home.html.erb within layouts/application (Duration: 2.5ms | Allocations: 326)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 121ms (Views: 98.8ms | ActiveRecord: 0.0ms | Allocations: 28331)
+
+
+Started GET "/login" for ::1 at 2020-07-19 22:08:30 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/login.html.erb within layouts/application
+  Rendered sessions/login.html.erb within layouts/application (Duration: 17.9ms | Allocations: 2745)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 62ms (Views: 49.2ms | ActiveRecord: 0.6ms | Allocations: 11891)
+
+
+Started GET "/logout" for ::1 at 2020-07-19 22:08:37 -0400
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 277)
+
+
+Started GET "/" for ::1 at 2020-07-19 22:08:37 -0400
+Processing by SessionsController#home as HTML
+  Rendering sessions/home.html.erb within layouts/application
+  Rendered sessions/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 61)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 8.4ms | ActiveRecord: 0.0ms | Allocations: 4167)
+
+
+Started GET "/signup" for ::1 at 2020-07-19 22:08:39 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1022)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 13.4ms | ActiveRecord: 0.0ms | Allocations: 5709)
+
+
+Started GET "/logout" for ::1 at 2020-07-19 22:08:47 -0400
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 252)
+
+
+Started GET "/" for ::1 at 2020-07-19 22:08:47 -0400
+Processing by SessionsController#home as HTML
+  Rendering sessions/home.html.erb within layouts/application
+  Rendered sessions/home.html.erb within layouts/application (Duration: 0.3ms | Allocations: 65)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 11.5ms | ActiveRecord: 0.0ms | Allocations: 4174)
+
+
+Started GET "/login" for ::1 at 2020-07-19 22:08:48 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/login.html.erb within layouts/application
+  Rendered sessions/login.html.erb within layouts/application (Duration: 1.6ms | Allocations: 773)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 12.8ms | ActiveRecord: 0.0ms | Allocations: 4855)
+
+
+Started POST "/users" for ::1 at 2020-07-19 22:08:57 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"9Fx3KtplDZWsQqmBEz9jvlEfKncmVHtI1CeTEqyiz26D/GRZAmRJORkti/tP4AXhcRbCllDOjYDM/t7xObcFPg==", "user"=>{"username"=>"Summer", "email"=>"summer@smithhousehold.com", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Summer"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 1.2ms | Allocations: 790)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 262ms (Views: 9.8ms | ActiveRecord: 0.6ms | Allocations: 8919)
+
+
+Started GET "/logout" for ::1 at 2020-07-19 22:09:01 -0400
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 253)
+
+
+Started GET "/" for ::1 at 2020-07-19 22:09:01 -0400
+Processing by SessionsController#home as HTML
+  Rendering sessions/home.html.erb within layouts/application
+  Rendered sessions/home.html.erb within layouts/application (Duration: 0.2ms | Allocations: 58)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 9.0ms | ActiveRecord: 0.0ms | Allocations: 4151)
+
+
