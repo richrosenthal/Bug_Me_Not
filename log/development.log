@@ -1912,3 +1912,647 @@ Processing by TicketsController#index as HTML
 Completed 200 OK in 18ms (Views: 16.8ms | ActiveRecord: 0.4ms | Allocations: 6597)
 
 
+Started GET "/tickets/new" for ::1 at 2020-07-20 17:13:28 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by TicketsController#new as HTML
+  Rendering tickets/new.html.erb within layouts/application
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  ↳ app/views/tickets/new.html.erb:19
+  Rendered tickets/new.html.erb within layouts/application (Duration: 6.4ms | Allocations: 1865)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 35ms (Views: 31.7ms | ActiveRecord: 0.4ms | Allocations: 7148)
+
+
+Started GET "/tickets/new" for ::1 at 2020-07-20 17:14:34 -0400
+Processing by TicketsController#new as HTML
+  Rendering tickets/new.html.erb within layouts/application
+  Rendered layouts/_errors.html.erb (Duration: 1.5ms | Allocations: 213)
+  [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  ↳ app/views/tickets/new.html.erb:21
+  Rendered tickets/new.html.erb within layouts/application (Duration: 7.1ms | Allocations: 2280)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 25ms (Views: 23.6ms | ActiveRecord: 0.1ms | Allocations: 7552)
+
+
+Started POST "/tickets" for ::1 at 2020-07-20 17:14:38 -0400
+Processing by TicketsController#create as HTML
+  Parameters: {"authenticity_token"=>"rMoXfnzoDJ8h/3Fc6Ht/pbVl96Shr/aJgpw4V3UjPdKTGREbKzTFAsBZn05CKXYz65QQgREQFwwKRM2yc+ZWZw==", "ticket"=>{"title"=>"", "description"=>"", "project_attributes"=>{"name"=>""}}, "commit"=>"Create Ticket"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tickets_controller.rb:11:in `create'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/tickets_controller.rb:11:in `create'
+  [1m[36mProject Create (0.6ms)[0m  [1m[32mINSERT INTO "projects" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", ""], ["created_at", "2020-07-20 21:14:38.260188"], ["updated_at", "2020-07-20 21:14:38.260188"]]
+  ↳ app/controllers/tickets_controller.rb:11:in `create'
+  [1m[36mTicket Create (0.8ms)[0m  [1m[32mINSERT INTO "tickets" ("title", "description", "project_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", ""], ["description", ""], ["project_id", 1], ["user_id", 4], ["created_at", "2020-07-20 21:14:38.261993"], ["updated_at", "2020-07-20 21:14:38.261993"]]
+  ↳ app/controllers/tickets_controller.rb:11:in `create'
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tickets_controller.rb:11:in `create'
+Redirected to http://localhost:3000/tickets/1
+Completed 302 Found in 10ms (ActiveRecord: 3.0ms | Allocations: 5356)
+
+
+Started GET "/tickets/1" for ::1 at 2020-07-20 17:14:38 -0400
+Processing by TicketsController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering tickets/show.html.erb within layouts/application
+  Rendered tickets/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 71)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 9.1ms | ActiveRecord: 0.0ms | Allocations: 4317)
+
+
+Started POST "/tickets" for ::1 at 2020-07-20 17:14:48 -0400
+Processing by TicketsController#create as HTML
+  Parameters: {"authenticity_token"=>"rMoXfnzoDJ8h/3Fc6Ht/pbVl96Shr/aJgpw4V3UjPdKTGREbKzTFAsBZn05CKXYz65QQgREQFwwKRM2yc+ZWZw==", "ticket"=>{"title"=>"", "description"=>"", "project_attributes"=>{"name"=>""}}, "commit"=>"Create Ticket"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tickets_controller.rb:11:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/tickets_controller.rb:11:in `create'
+  [1m[36mProject Create (0.5ms)[0m  [1m[32mINSERT INTO "projects" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", ""], ["created_at", "2020-07-20 21:14:48.649621"], ["updated_at", "2020-07-20 21:14:48.649621"]]
+  ↳ app/controllers/tickets_controller.rb:11:in `create'
+  [1m[36mTicket Create (0.2ms)[0m  [1m[32mINSERT INTO "tickets" ("title", "description", "project_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", ""], ["description", ""], ["project_id", 2], ["user_id", 4], ["created_at", "2020-07-20 21:14:48.651755"], ["updated_at", "2020-07-20 21:14:48.651755"]]
+  ↳ app/controllers/tickets_controller.rb:11:in `create'
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tickets_controller.rb:11:in `create'
+Redirected to http://localhost:3000/tickets/2
+Completed 302 Found in 9ms (ActiveRecord: 2.0ms | Allocations: 5341)
+
+
+Started GET "/tickets/2" for ::1 at 2020-07-20 17:14:48 -0400
+Processing by TicketsController#show as HTML
+  Parameters: {"id"=>"2"}
+  Rendering tickets/show.html.erb within layouts/application
+  Rendered tickets/show.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 8.5ms | ActiveRecord: 0.0ms | Allocations: 4130)
+
+
+Started POST "/tickets" for ::1 at 2020-07-20 17:16:17 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by TicketsController#create as HTML
+  Parameters: {"authenticity_token"=>"rMoXfnzoDJ8h/3Fc6Ht/pbVl96Shr/aJgpw4V3UjPdKTGREbKzTFAsBZn05CKXYz65QQgREQFwwKRM2yc+ZWZw==", "ticket"=>{"title"=>"", "description"=>"", "project_attributes"=>{"name"=>""}}, "commit"=>"Create Ticket"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tickets_controller.rb:11:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/tickets_controller.rb:11:in `create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/tickets_controller.rb:11:in `create'
+  Rendering tickets/new.html.erb within layouts/application
+  Rendered layouts/_errors.html.erb (Duration: 0.4ms | Allocations: 290)
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  ↳ app/views/tickets/new.html.erb:21
+  Rendered tickets/new.html.erb within layouts/application (Duration: 3.1ms | Allocations: 2040)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 69ms (Views: 12.2ms | ActiveRecord: 2.4ms | Allocations: 28178)
+
+
+Started POST "/tickets" for ::1 at 2020-07-20 17:16:46 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by TicketsController#create as HTML
+  Parameters: {"authenticity_token"=>"+uWfZ1q+7cGe/YeUzNIpS4NpOUQuabk59IfoTT9b3+vFNpkCDWIkXH9baYZmgCDd3ZjeYZ7WWLx8Xx2oOZ60Xg==", "ticket"=>{"title"=>"", "description"=>"", "project_id"=>"1", "project_attributes"=>{"name"=>""}}, "commit"=>"Create Ticket"}
+  [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tickets_controller.rb:9:in `create'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tickets_controller.rb:11:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/tickets_controller.rb:11:in `create'
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/tickets_controller.rb:11:in `create'
+  Rendering tickets/new.html.erb within layouts/application
+  Rendered layouts/_errors.html.erb (Duration: 0.3ms | Allocations: 283)
+  [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  ↳ app/views/tickets/new.html.erb:21
+  Rendered tickets/new.html.erb within layouts/application (Duration: 2.7ms | Allocations: 2023)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 44ms (Views: 11.8ms | ActiveRecord: 1.8ms | Allocations: 29137)
+
+
+Started GET "/tickets" for ::1 at 2020-07-20 17:16:48 -0400
+Processing by TicketsController#index as HTML
+  Rendering tickets/index.html.erb within layouts/application
+  [1m[36mTicket Load (0.2ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets"[0m
+  ↳ app/views/tickets/index.html.erb:3
+  [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:4
+  [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:4
+  Rendered tickets/index.html.erb within layouts/application (Duration: 4.3ms | Allocations: 2300)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 15ms (Views: 13.4ms | ActiveRecord: 0.4ms | Allocations: 6628)
+
+
+Started GET "/tickets/new" for ::1 at 2020-07-20 17:16:49 -0400
+Processing by TicketsController#new as HTML
+  Rendering tickets/new.html.erb within layouts/application
+  Rendered layouts/_errors.html.erb (Duration: 0.0ms | Allocations: 15)
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  ↳ app/views/tickets/new.html.erb:21
+  Rendered tickets/new.html.erb within layouts/application (Duration: 3.5ms | Allocations: 1668)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 23ms (Views: 21.9ms | ActiveRecord: 0.2ms | Allocations: 5972)
+
+
+Started POST "/tickets" for ::1 at 2020-07-20 17:16:51 -0400
+Processing by TicketsController#create as HTML
+  Parameters: {"authenticity_token"=>"iHc/9KT6Brb9LAbUNhVk1ga1kz/CgaZ3lym7cng1t2EKKwT0xj0pFRztQfb7VGj9dz7L1WKpL+RFxvzFpj72NA==", "ticket"=>{"title"=>"", "description"=>"", "project_id"=>"1", "project_attributes"=>{"name"=>""}}, "commit"=>"Create Ticket"}
+  [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tickets_controller.rb:9:in `create'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tickets_controller.rb:11:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/tickets_controller.rb:11:in `create'
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/tickets_controller.rb:11:in `create'
+  Rendering tickets/new.html.erb within layouts/application
+  Rendered layouts/_errors.html.erb (Duration: 0.4ms | Allocations: 283)
+  [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  ↳ app/views/tickets/new.html.erb:21
+  Rendered tickets/new.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1943)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 12.9ms | ActiveRecord: 0.3ms | Allocations: 10890)
+
+
+Started GET "/tickets" for ::1 at 2020-07-20 17:17:20 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by TicketsController#index as HTML
+  Rendering tickets/index.html.erb within layouts/application
+  [1m[36mTicket Load (0.1ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets"[0m
+  ↳ app/views/tickets/index.html.erb:3
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:4
+  [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:4
+  Rendered tickets/index.html.erb within layouts/application (Duration: 25.5ms | Allocations: 11601)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 38ms (Views: 31.9ms | ActiveRecord: 1.7ms | Allocations: 17846)
+
+
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTicket Load (0.2ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mUpdate Load (0.3ms)[0m  [1m[34mSELECT "updates".* FROM "updates" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/" for ::1 at 2020-07-20 17:20:27 -0400
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#welcome as HTML
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 2.2ms | Allocations: 567)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 43ms (Views: 36.3ms | ActiveRecord: 0.0ms | Allocations: 10988)
+
+
+Started GET "/login" for ::1 at 2020-07-20 17:20:31 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 13.6ms | Allocations: 2809)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 25ms (Views: 22.9ms | ActiveRecord: 0.0ms | Allocations: 7085)
+
+
+Started POST "/login" for ::1 at 2020-07-20 17:20:35 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"I5pRKbOJOe5XF+ms6cHGUUPg2c29dCWsoUizbitC54bi4QdHvsSXGQWsiQXVzkrvpTSfjYaFPBN+F9YejC7U8A==", "user"=>{"username"=>"Beth", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Beth"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:15:in `create'
+Redirected to http://localhost:3000/users/4
+Completed 302 Found in 259ms (ActiveRecord: 1.1ms | Allocations: 8223)
+
+
+Started GET "/users/4" for ::1 at 2020-07-20 17:20:36 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:20:in `show'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.7ms | Allocations: 111)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 36ms (Views: 15.0ms | ActiveRecord: 0.2ms | Allocations: 5586)
+
+
+Started GET "/tickets/new" for ::1 at 2020-07-20 17:20:39 -0400
+Processing by TicketsController#new as HTML
+  Rendering tickets/new.html.erb within layouts/application
+  Rendered layouts/_errors.html.erb (Duration: 0.9ms | Allocations: 214)
+  [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  ↳ app/views/tickets/new.html.erb:21
+  Rendered tickets/new.html.erb within layouts/application (Duration: 8.8ms | Allocations: 2800)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 47ms (Views: 18.5ms | ActiveRecord: 1.3ms | Allocations: 20001)
+
+
+Started POST "/tickets" for ::1 at 2020-07-20 17:21:11 -0400
+Processing by TicketsController#create as HTML
+  Parameters: {"authenticity_token"=>"BKMIDgdWtFa+huyi4aSnFBd1v8GnahV/QhC9sEre13qG/zMOZZGb9V9Hq4As5as/Zv7nKwdCnOyQ//oHlNWWLw==", "ticket"=>{"title"=>"Can't save to database", "description"=>"I can't save a ticket to the database after I submit the Create Ticket form. ", "project_id"=>"1", "project_attributes"=>{"name"=>"Bug Me Not"}}, "commit"=>"Create Ticket"}
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tickets_controller.rb:9:in `create'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tickets_controller.rb:11:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/tickets_controller.rb:11:in `create'
+  [1m[36mProject Create (0.4ms)[0m  [1m[32mINSERT INTO "projects" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Bug Me Not"], ["created_at", "2020-07-20 21:21:11.926497"], ["updated_at", "2020-07-20 21:21:11.926497"]]
+  ↳ app/controllers/tickets_controller.rb:11:in `create'
+  [1m[36mTicket Create (0.2ms)[0m  [1m[32mINSERT INTO "tickets" ("title", "description", "project_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Can't save to database"], ["description", "I can't save a ticket to the database after I submit the Create Ticket form. "], ["project_id", 3], ["user_id", 4], ["created_at", "2020-07-20 21:21:11.928242"], ["updated_at", "2020-07-20 21:21:11.928242"]]
+  ↳ app/controllers/tickets_controller.rb:11:in `create'
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tickets_controller.rb:11:in `create'
+Redirected to http://localhost:3000/tickets/3
+Completed 302 Found in 11ms (ActiveRecord: 1.9ms | Allocations: 7519)
+
+
+Started GET "/tickets/3" for ::1 at 2020-07-20 17:21:11 -0400
+Processing by TicketsController#show as HTML
+  Parameters: {"id"=>"3"}
+  Rendering tickets/show.html.erb within layouts/application
+  Rendered tickets/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 73)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 9.8ms | ActiveRecord: 0.0ms | Allocations: 4304)
+
+
+Started GET "/tickets/3/updates/new" for ::1 at 2020-07-20 17:21:20 -0400
+Processing by UpdatesController#new as HTML
+  Parameters: {"ticket_id"=>"3"}
+  [1m[36mTicket Load (0.2ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets" WHERE "tickets"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/updates_controller.rb:3:in `new'
+  Rendering updates/new.html.erb within layouts/application
+  Rendered updates/new.html.erb within layouts/application (Duration: 11.1ms | Allocations: 1519)
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 0.7ms | Allocations: 10951)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>Submit Update for <%= @update.ticket.title %> - <%= @update.ticket.project.name %> </h1>
+<%# This should be a comment  %>
+
+<%= render partial: 'layouts/errors', locals: {object: @update} %>
+
+<%= form_for(@update) do |f| %>
+  <% if params[:ticket_id] %>
+    <%= f.hidden_field :ticket_id %>
+  <% else %>
+   <div>
+       <%= f.label :ticket_id, "Select a Ticket to update" %>
+       <%= f.collection_select :ticket_id, Ticket.all, :id, :title, include_blank: true %>
+   </div>
+   <% end %> 
+
+<%= form_for(@update) do |f| %>
+
+<div>
+    <%= f.label :Update %>
+    <%= f.text_area :content %>
+</div>
+
+    <%= f.hidden_field :ticket_id %>
+
+    <%= f.submit %>
+
+
+
+<% end %>
+
+):
+1:    <h1>Submit Update for <%= @update.ticket.title %> - <%= @update.ticket.project.name %> </h1>
+2:    <%# This should be a comment  %>
+3:    
+4:    <%= render partial: 'layouts/errors', locals: {object: @update} %>
+5:    
+6:    <%= form_for(@update) do |f| %>
+7:      <% if params[:ticket_id] %>
+8:        <%= f.hidden_field :ticket_id %>
+9:      <% else %>
+10:       <div>
+11:           <%= f.label :ticket_id, "Select a Ticket to update" %>
+12:           <%= f.collection_select :ticket_id, Ticket.all, :id, :title, include_blank: true %>
+13:       </div>
+14:       <% end %> 
+15:    
+16:    <%= form_for(@update) do |f| %>
+17:    
+18:    <div>
+19:        <%= f.label :Update %>
+20:        <%= f.text_area :content %>
+21:    </div>
+22:    
+23:        <%= f.hidden_field :ticket_id %>
+24:    
+25:        <%= f.submit %>
+26:    
+27:    
+28:    
+29:    <% end %>
+  
+app/views/updates/new.html.erb:31: syntax error, unexpected end-of-input, expecting end
+app/views/updates/new.html.erb:31: syntax error, unexpected end-of-input, expecting end
+app/views/updates/new.html.erb:31: syntax error, unexpected end-of-input, expecting end
+app/views/updates/new.html.erb:31: syntax error, unexpected end-of-input, expecting end
+app/views/updates/new.html.erb:31: syntax error, unexpected end-of-input, expecting end
+app/views/updates/new.html.erb:31: syntax error, unexpected end-of-input, expecting end
+Started GET "/tickets/3/updates/new" for ::1 at 2020-07-20 17:23:36 -0400
+Processing by UpdatesController#new as HTML
+  Parameters: {"ticket_id"=>"3"}
+  [1m[36mTicket Load (0.1ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets" WHERE "tickets"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/updates_controller.rb:3:in `new'
+  Rendering updates/new.html.erb within layouts/application
+  Rendered updates/new.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1267)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.1ms | Allocations: 3242)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>Submit Update for <%= @update.ticket.title %> - <%= @update.ticket.project.name %> </h1>
+<%# This should be a comment  %>
+
+<%= render partial: 'layouts/errors', locals: {object: @update} %>
+
+<%= form_for(@update) do |f| %>
+  <% if params[:ticket_id] %>
+    <%= f.hidden_field :ticket_id %>
+  <% else %>
+   <div>
+       <%= f.label :ticket_id, "Select a Ticket to update" %>
+       <%= f.collection_select :ticket_id, Ticket.all, :id, :title, include_blank: true %>
+   </div>
+   <% end %>
+
+<%= form_for(@update) do |f| %>
+
+<div>
+    <%= f.label :Update %>
+    <%= f.text_area :content %>
+</div>
+
+    <%= f.hidden_field :ticket_id %>
+
+    <%= f.submit %>
+<% end %>
+
+):
+1:    <h1>Submit Update for <%= @update.ticket.title %> - <%= @update.ticket.project.name %> </h1>
+2:    <%# This should be a comment  %>
+3:    
+4:    <%= render partial: 'layouts/errors', locals: {object: @update} %>
+5:    
+6:    <%= form_for(@update) do |f| %>
+7:      <% if params[:ticket_id] %>
+8:        <%= f.hidden_field :ticket_id %>
+9:      <% else %>
+10:       <div>
+11:           <%= f.label :ticket_id, "Select a Ticket to update" %>
+12:           <%= f.collection_select :ticket_id, Ticket.all, :id, :title, include_blank: true %>
+13:       </div>
+14:       <% end %>
+15:    
+16:    <%= form_for(@update) do |f| %>
+17:    
+18:    <div>
+19:        <%= f.label :Update %>
+20:        <%= f.text_area :content %>
+21:    </div>
+22:    
+23:        <%= f.hidden_field :ticket_id %>
+24:    
+25:        <%= f.submit %>
+26:    <% end %>
+  
+app/views/updates/new.html.erb:28: syntax error, unexpected end-of-input, expecting end
+app/views/updates/new.html.erb:28: syntax error, unexpected end-of-input, expecting end
+app/views/updates/new.html.erb:28: syntax error, unexpected end-of-input, expecting end
+app/views/updates/new.html.erb:28: syntax error, unexpected end-of-input, expecting end
+app/views/updates/new.html.erb:28: syntax error, unexpected end-of-input, expecting end
+app/views/updates/new.html.erb:28: syntax error, unexpected end-of-input, expecting end
+Started GET "/tickets/3/updates/new" for ::1 at 2020-07-20 17:24:07 -0400
+Processing by UpdatesController#new as HTML
+  Parameters: {"ticket_id"=>"3"}
+  [1m[36mTicket Load (0.1ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets" WHERE "tickets"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/updates_controller.rb:3:in `new'
+  Rendering updates/new.html.erb within layouts/application
+  [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/updates/new.html.erb:1
+  Rendered layouts/_errors.html.erb (Duration: 1.3ms | Allocations: 206)
+  Rendered updates/new.html.erb within layouts/application (Duration: 8.1ms | Allocations: 2584)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 26ms (Views: 23.6ms | ActiveRecord: 0.2ms | Allocations: 8487)
+
+
+Started POST "/updates" for ::1 at 2020-07-20 17:24:57 -0400
+Processing by UpdatesController#create as HTML
+  Parameters: {"authenticity_token"=>"BoDkg50XpxA00tfHCSrEjgOLcrqeHLD7syCWroD5rcA5U+LmystujdV0OdWjeM0YXXqVny6jUX47+GNLhjzGdQ==", "update"=>{"ticket_id"=>"3", "content"=>"I had written this `@ticket.user_id = session[:id]` when I should have written `@ticket.user_id = session[:user_id]` This should fix the issue. "}, "commit"=>"Create Update"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/updates_controller.rb:9:in `create'
+  [1m[36mTicket Load (0.1ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets" WHERE "tickets"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/updates_controller.rb:9:in `create'
+  [1m[36mUpdate Create (0.4ms)[0m  [1m[32mINSERT INTO "updates" ("content", "user_id", "ticket_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "I had written this `@ticket.user_id = session[:id]` when I should have written `@ticket.user_id = session[:user_id]` This should fix the issue. "], ["user_id", 4], ["ticket_id", 3], ["created_at", "2020-07-20 21:24:57.013231"], ["updated_at", "2020-07-20 21:24:57.013231"]]
+  ↳ app/controllers/updates_controller.rb:9:in `create'
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/updates_controller.rb:9:in `create'
+Redirected to http://localhost:3000/updates/1
+Completed 302 Found in 8ms (ActiveRecord: 1.8ms | Allocations: 5647)
+
+
+Started GET "/updates/1" for ::1 at 2020-07-20 17:24:57 -0400
+Processing by UpdatesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUpdate Load (0.2ms)[0m  [1m[34mSELECT "updates".* FROM "updates" WHERE "updates"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/updates_controller.rb:17:in `show'
+  Rendering updates/show.html.erb within layouts/application
+  Rendered updates/show.html.erb within layouts/application (Duration: 1.4ms | Allocations: 106)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 15ms (Views: 13.0ms | ActiveRecord: 0.2ms | Allocations: 5955)
+
+
+Started GET "/updates/" for ::1 at 2020-07-20 17:25:04 -0400
+Processing by UpdatesController#index as HTML
+  Rendering updates/index.html.erb within layouts/application
+  Rendered updates/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 73)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 18.0ms | ActiveRecord: 0.0ms | Allocations: 4361)
+
+
+Started GET "/" for ::1 at 2020-07-20 17:25:09 -0400
+Processing by SessionsController#welcome as HTML
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 1.9ms | Allocations: 185)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 14.5ms | ActiveRecord: 0.0ms | Allocations: 4891)
+
+
+Started GET "/projects" for ::1 at 2020-07-20 17:25:14 -0400
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for ProjectsController):
+  
+actionpack (6.0.3.2) lib/abstract_controller/base.rb:131:in `process'
+actionview (6.0.3.2) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.3.2) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.2) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.2) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.2) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.2) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.2) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.2) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.2) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3.2) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.2) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/reviews" for ::1 at 2020-07-20 17:25:21 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/reviews"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/tickets" for ::1 at 2020-07-20 17:25:36 -0400
+Processing by TicketsController#index as HTML
+  Rendering tickets/index.html.erb within layouts/application
+  [1m[36mTicket Load (0.2ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets"[0m
+  ↳ app/views/tickets/index.html.erb:3
+  [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:4
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:4
+  [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:4
+  Rendered tickets/index.html.erb within layouts/application (Duration: 13.6ms | Allocations: 3049)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 24ms (Views: 22.4ms | ActiveRecord: 0.5ms | Allocations: 7784)
+
+
+Started GET "/tickets" for ::1 at 2020-07-20 17:29:26 -0400
+Processing by TicketsController#index as HTML
+  Rendering tickets/index.html.erb within layouts/application
+  [1m[36mTicket Load (0.1ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets"[0m
+  ↳ app/views/tickets/index.html.erb:3
+  [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:4
+  Rendered tickets/index.html.erb within layouts/application (Duration: 27.5ms | Allocations: 2458)
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 0.2ms | Allocations: 3624)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 0, expected 1)):
+    13:         </p>
+    14:          <ol>
+    15:            <li>
+    16:              <%= t.update.content %> 
+    17:            </li>
+    18:          </ol>
+    19:       </li>
+  
+app/views/tickets/index.html.erb:16
+app/views/tickets/index.html.erb:3
+Started GET "/tickets" for ::1 at 2020-07-20 17:35:31 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by TicketsController#index as HTML
+  Rendering tickets/index.html.erb within layouts/application
+  [1m[36mTicket Load (0.2ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets"[0m
+  ↳ app/views/tickets/index.html.erb:3
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:4
+  [1m[36mUpdate Load (0.1ms)[0m  [1m[34mSELECT "updates".* FROM "updates" WHERE "updates"."ticket_id" = ? LIMIT ?[0m  [["ticket_id", 1], ["LIMIT", 11]]
+  Rendered tickets/index.html.erb within layouts/application (Duration: 8.9ms | Allocations: 5527)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.5ms | Allocations: 6693)
+
+
+  
+ActionView::Template::Error (undefined method `content' for #<ActiveRecord::Associations::CollectionProxy []>
+Did you mean?  connection):
+    13:         </p>
+    14:          <ol>
+    15:            <li>
+    16:              <%= t.updates.content %> 
+    17:            </li>
+    18:          </ol>
+    19:       </li>
+  
+app/views/tickets/index.html.erb:16
+app/views/tickets/index.html.erb:3
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTicket Load (0.1ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mTicket Load (0.2ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mTicket Load (0.3ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets" ORDER BY "tickets"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTicket Load (0.2ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets" ORDER BY "tickets"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/tickets" for ::1 at 2020-07-20 17:42:17 -0400
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TicketsController#index as HTML
+  Rendering tickets/index.html.erb within layouts/application
+  [1m[36mTicket Load (0.2ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets"[0m
+  ↳ app/views/tickets/index.html.erb:3
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:4
+  [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:4
+  [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:4
+  Rendered tickets/index.html.erb within layouts/application (Duration: 27.0ms | Allocations: 14982)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 73ms (Views: 56.4ms | ActiveRecord: 1.7ms | Allocations: 27596)
+
+
