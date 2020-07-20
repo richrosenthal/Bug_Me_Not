@@ -1,8 +1,14 @@
 class UpdatesController < ApplicationController
   def new
-    @ticket = Ticket.find_by_id(params[:ticket_id])
-    @update = @ticket.updates.build
-  end
+    if @ticket = Ticket.find_by_id(params[:ticket_id])
+       @update = @ticket.updates.build
+    else
+      @update = Update.new
+    end
+  end 
+
+
+
 
   def create
     @update = current_user.updates.build(update_params)
