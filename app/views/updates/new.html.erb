@@ -11,7 +11,7 @@
        <%= f.label :ticket_id, "Select a Ticket to update" %>
        <%= f.collection_select :ticket_id, Ticket.all, :id, :title, include_blank: true %>
    </div>
-   <% end %> 
+   <% end %>
 
 <%= form_for(@update) do |f| %>
 
@@ -23,7 +23,6 @@
     <%= f.hidden_field :ticket_id %>
 
     <%= f.submit %>
-
-
+<% end %>
 
 <% end %>
