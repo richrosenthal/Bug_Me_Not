@@ -1,16 +1,14 @@
 class SessionsController < ApplicationController
-   def new
-     @user = User.new
-     render :login
-   end
-
-   def home
+   def welcome
    end
 
    def destroy
     session.clear
     redirect_to '/'
    end
+
+   def new
+   end 
 
    def create
      #does user exist?
