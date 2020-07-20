@@ -1266,3 +1266,80 @@ Processing by SessionsController#home as HTML
 Completed 200 OK in 10ms (Views: 9.7ms | ActiveRecord: 0.0ms | Allocations: 4319)
 
 
+Started GET "/" for ::1 at 2020-07-20 00:02:36 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#home as HTML
+  Rendering sessions/home.html.erb within layouts/application
+  Rendered sessions/home.html.erb within layouts/application (Duration: 0.7ms | Allocations: 185)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 16.7ms | ActiveRecord: 0.0ms | Allocations: 5191)
+
+
+Started GET "/login" for ::1 at 2020-07-20 00:02:38 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/login.html.erb within layouts/application
+  Rendered sessions/login.html.erb within layouts/application (Duration: 2.2ms | Allocations: 900)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 40ms (Views: 10.7ms | ActiveRecord: 0.0ms | Allocations: 11651)
+
+
+Started POST "/users" for ::1 at 2020-07-20 00:02:43 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"NuH4eZBplCjF6TqOIDn2xrqC9PNZm1gF09AyRJwllNu4BUo1DLj1xK1Vr2tD59FQ/RLJaj+A2ae3OT+wDKAN4A==", "user"=>{"username"=>"richrosenthal", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "richrosenthal"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1019)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 258ms (Views: 11.4ms | ActiveRecord: 0.6ms | Allocations: 9263)
+
+
+Started POST "/users" for ::1 at 2020-07-20 00:02:55 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"8ad2itmmS0NrkzUypqgZO2fxJE0Rx1H+zEIdg+X91BM4VRZSMI1huMNgHKEyBEci5/9FwgDmkJHLflTjEmOu6A==", "user"=>{"username"=>"richrosenthal", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "richrosenthal"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 772)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 265ms (Views: 17.9ms | ActiveRecord: 0.3ms | Allocations: 8243)
+
+
+Started POST "/users" for ::1 at 2020-07-20 00:03:12 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"8ad2itmmS0NrkzUypqgZO2fxJE0Rx1H+zEIdg+X91BM4VRZSMI1huMNgHKEyBEci5/9FwgDmkJHLflTjEmOu6A==", "user"=>{"username"=>"richrosenthal", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "richrosenthal"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1020)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 259ms (Views: 11.5ms | ActiveRecord: 0.4ms | Allocations: 9449)
+
+
+Started POST "/users" for ::1 at 2020-07-20 00:03:21 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"8ad2itmmS0NrkzUypqgZO2fxJE0Rx1H+zEIdg+X91BM4VRZSMI1huMNgHKEyBEci5/9FwgDmkJHLflTjEmOu6A==", "user"=>{"username"=>"richrosenthal", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "richrosenthal"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 1.2ms | Allocations: 775)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 255ms (Views: 9.2ms | ActiveRecord: 0.3ms | Allocations: 8228)
+
+
