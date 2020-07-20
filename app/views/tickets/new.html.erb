@@ -1,0 +1,33 @@
+<h1>Create Ticket</h1>
+<p>
+  Please fill out form below to submit a ticket for a project. Our engineers will work
+  on a first come first serve basis.
+</p>
+
+<%= form_for(@ticket) do |f| %>
+  <div>
+    <%= f.label :title %>
+    <%=f.text_field :title %>
+    </div>
+    <div>
+    <%= f.label :description %>
+    <%= f.text_area :description%>
+    </div>
+
+    <p> Select the Project ticket is in reference for: </p>
+    <div>
+        <%= f.collection_select :project_id, Project.all, :id, :name %>
+    </div>
+
+    <p>Or create a new Project: </p>
+    <div>
+        <%=f.fields_for :project do |p| %>
+         <%= p.label :name %>
+         <%= p.text_field :name %>
+        <%end%>
+    </div>
+    <br>
+
+    <%= f.submit "Create Ticket" %>
+
+<% end %>
