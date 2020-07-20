@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-  resources :tickets
   resources :projects
   root 'sessions#home'
   get '/signup' => 'users#new'
