@@ -1,0 +1,11 @@
+<h1>Tickets</h1>
+
+<% @tickets.each do |t| %>
+  <h2><%= t.project.name %></h2>
+  <h3><%= t.title %></h3>
+  <div>
+    <p>
+      <%= t.description %>
+    </p>
+  </div>
+<% end %>
