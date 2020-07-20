@@ -1,0 +1,16 @@
+<h1>Submit Update for <%= @update.ticket.title %> - <%= @update.ticket.project.name %> </h1>
+
+<%= form_for(@update) do |f| %>
+
+<div>
+    <%= f.label :Update %>
+    <%= f.text_area :content %>
+</div>
+
+    <%= f.hidden_field :ticket_id %>
+
+    <%= f.submit %>
+
+
+
+<% end %>
