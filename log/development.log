@@ -1166,3 +1166,77 @@ Processing by SessionsController#home as HTML
 Completed 200 OK in 10ms (Views: 9.0ms | ActiveRecord: 0.0ms | Allocations: 4151)
 
 
+Started GET "/login" for ::1 at 2020-07-19 22:12:34 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/login.html.erb within layouts/application
+  Rendered sessions/login.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1072)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 27ms (Views: 19.3ms | ActiveRecord: 0.6ms | Allocations: 10736)
+
+
+Started POST "/users" for ::1 at 2020-07-19 22:12:43 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"dQunpRfh1yH3zLOSP80DxFdekApuIf4Urzf8xknOy5+twSgxbQOlElaSvb1s6YcbOxgvYEAiHinZcG0r9wT4uA==", "user"=>{"username"=>"Summer", "email"=>"summer@smithhousehold.com", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Summer"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1027)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 274ms (Views: 12.8ms | ActiveRecord: 0.3ms | Allocations: 9210)
+
+
+Started GET "/logout" for ::1 at 2020-07-19 22:12:48 -0400
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 256)
+
+
+Started GET "/" for ::1 at 2020-07-19 22:12:48 -0400
+Processing by SessionsController#home as HTML
+  Rendering sessions/home.html.erb within layouts/application
+  Rendered sessions/home.html.erb within layouts/application (Duration: 1.3ms | Allocations: 179)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 10.6ms | ActiveRecord: 0.0ms | Allocations: 4420)
+
+
+Started GET "/signup" for ::1 at 2020-07-19 22:12:49 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 778)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 12.9ms | ActiveRecord: 0.0ms | Allocations: 4896)
+
+
+Started POST "/users" for ::1 at 2020-07-19 22:13:09 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"G9AKRqwI2L32o3T9h/rebhJ1p4PcTO/GWNMLamBVNpWJchrBFzOxPcdVlhZW0jXoLVG+WHgs6TQrVtiODU5UZQ==", "user"=>{"username"=>"morty", "email"=>"morty@smithhousehold.com", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "morty"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "morty"], ["email", "morty@smithhousehold.com"], ["password_digest", "$2a$12$rcDUua8QwZhKJ7YMZligXuMJFwgc/kODlKUB0Q6pBhXDoZsl3stqO"], ["created_at", "2020-07-20 02:13:09.297800"], ["updated_at", "2020-07-20 02:13:09.297800"]]
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:10:in `create'
+Redirected to http://localhost:3000/users/3
+Completed 302 Found in 251ms (ActiveRecord: 1.9ms | Allocations: 3928)
+
+
+Started GET "/users/3" for ::1 at 2020-07-19 22:13:09 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 11.0ms | Allocations: 4006)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms | Allocations: 4531)
+
+
+  
+ActionView::Template::Error (undefined method `username' for nil:NilClass):
+    1: Welcome <%= @user.username %> You have signed in!
+  
+app/views/users/show.html.erb:1

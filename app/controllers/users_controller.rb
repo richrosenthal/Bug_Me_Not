@@ -16,6 +16,11 @@ class UsersController < ApplicationController
     end
    end
 
+   def show
+    @user = User.find_by_id(params[:id]) #will send an error code vs if use find method
+    redirect_to '/' if !@user #this is a failsafe incase someone messes with the dynamic route to an user that doesn't exist.  
+   end
+
   #private method
 private
 
