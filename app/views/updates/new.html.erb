@@ -1,5 +1,7 @@
 <h1>Submit Update for <%= @update.ticket.title %> - <%= @update.ticket.project.name %> </h1>
+<%# This should be a comment  %>
 
+<%= render partial: 'layouts/errors', locals: {object: @update} %> 
 <%= form_for(@update) do |f| %>
 
 <div>
