@@ -1741,3 +1741,174 @@ Processing by TicketsController#index as HTML
 Completed 200 OK in 46ms (Views: 32.1ms | ActiveRecord: 0.7ms | Allocations: 14176)
 
 
+Started GET "/tickets/new" for ::1 at 2020-07-20 13:36:03 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by TicketsController#new as HTML
+  Rendering tickets/new.html.erb within layouts/application
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  ↳ app/views/tickets/new.html.erb:19
+  Rendered tickets/new.html.erb within layouts/application (Duration: 33.6ms | Allocations: 3709)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 67ms (Views: 43.2ms | ActiveRecord: 1.4ms | Allocations: 21177)
+
+
+Started POST "/tickets" for ::1 at 2020-07-20 13:37:06 -0400
+Processing by TicketsController#create as HTML
+  Parameters: {"authenticity_token"=>"tnLTDAW3vR0aQsLnqYw96PweVfFEC6as9rYhC+HL9zk0LugMZ3CSvvuDhcVkzTHDjZUNG+QjLz8kWWa8P8C2bA==", "ticket"=>{"title"=>"Can't save to database", "description"=>"Every time I fill out create ticket form nothing is saved to the database. ", "project_attributes"=>{"name"=>"Bug Me Not"}}, "commit"=>"Create Ticket"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tickets_controller.rb:11:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/tickets_controller.rb:11:in `create'
+  [1m[36mProject Create (0.7ms)[0m  [1m[32mINSERT INTO "projects" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Bug Me Not"], ["created_at", "2020-07-20 17:37:06.707200"], ["updated_at", "2020-07-20 17:37:06.707200"]]
+  ↳ app/controllers/tickets_controller.rb:11:in `create'
+  [1m[36mTicket Create (0.7ms)[0m  [1m[32mINSERT INTO "tickets" ("title", "description", "project_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Can't save to database"], ["description", "Every time I fill out create ticket form nothing is saved to the database. "], ["project_id", 1], ["user_id", 4], ["created_at", "2020-07-20 17:37:06.709532"], ["updated_at", "2020-07-20 17:37:06.709532"]]
+  ↳ app/controllers/tickets_controller.rb:11:in `create'
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tickets_controller.rb:11:in `create'
+Redirected to http://localhost:3000/tickets/1
+Completed 302 Found in 28ms (ActiveRecord: 2.9ms | Allocations: 12874)
+
+
+Started GET "/tickets/1" for ::1 at 2020-07-20 13:37:06 -0400
+Processing by TicketsController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering tickets/show.html.erb within layouts/application
+  Rendered tickets/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 73)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 11.1ms | ActiveRecord: 0.0ms | Allocations: 4318)
+
+
+Started GET "/tickets/1/updates/new" for ::1 at 2020-07-20 13:37:28 -0400
+Processing by UpdatesController#new as HTML
+  Parameters: {"ticket_id"=>"1"}
+  [1m[36mTicket Load (0.2ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets" WHERE "tickets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/updates_controller.rb:3:in `new'
+  Rendering updates/new.html.erb within layouts/application
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/updates/new.html.erb:1
+  Rendered updates/new.html.erb within layouts/application (Duration: 11.4ms | Allocations: 1979)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 81ms (Views: 20.6ms | ActiveRecord: 1.2ms | Allocations: 15157)
+
+
+Started POST "/updates" for ::1 at 2020-07-20 13:39:21 -0400
+Processing by UpdatesController#create as HTML
+  Parameters: {"authenticity_token"=>"T3ZgJja7nEQRezjj4pAY0WZ/vCaeFA39D6KvRY0F29JwpWZDYWdV2fDd1vFIwhFHOI5bAy6r7HiHelqgi8CwZw==", "update"=>{"content"=>"Hello Beth, it looks like in your tickets controller in your create action you typed \"@ticket.user_id = session[:id]\" you need to correct this to \"@ticket.user_id = session[:user_id]\". This should answer why your records were not being persisted to the database. Hope this helps. - Future Beth", "ticket_id"=>"1"}, "commit"=>"Create Update"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/updates_controller.rb:9:in `create'
+  [1m[36mTicket Load (0.1ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets" WHERE "tickets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/updates_controller.rb:9:in `create'
+  [1m[36mUpdate Create (0.3ms)[0m  [1m[32mINSERT INTO "updates" ("content", "user_id", "ticket_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "Hello Beth, it looks like in your tickets controller in your create action you typed \"@ticket.user_id = session[:id]\" you need to correct this to \"@ticket.user_id = session[:user_id]\". This should answer why your records were not being persisted to the database. Hope this helps. - Future Beth"], ["user_id", 4], ["ticket_id", 1], ["created_at", "2020-07-20 17:39:21.728351"], ["updated_at", "2020-07-20 17:39:21.728351"]]
+  ↳ app/controllers/updates_controller.rb:9:in `create'
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/updates_controller.rb:9:in `create'
+Redirected to http://localhost:3000/updates/1
+Completed 302 Found in 8ms (ActiveRecord: 1.7ms | Allocations: 5787)
+
+
+Started GET "/updates/1" for ::1 at 2020-07-20 13:39:21 -0400
+Processing by UpdatesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUpdate Load (0.2ms)[0m  [1m[34mSELECT "updates".* FROM "updates" WHERE "updates"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/updates_controller.rb:17:in `show'
+  Rendering updates/show.html.erb within layouts/application
+  Rendered updates/show.html.erb within layouts/application (Duration: 26.3ms | Allocations: 85)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 42ms (Views: 40.1ms | ActiveRecord: 0.2ms | Allocations: 5098)
+
+
+Started GET "/tickets/new" for ::1 at 2020-07-20 13:39:47 -0400
+Processing by TicketsController#new as HTML
+  Rendering tickets/new.html.erb within layouts/application
+  [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  ↳ app/views/tickets/new.html.erb:19
+  Rendered tickets/new.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1583)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 12.7ms | ActiveRecord: 0.1ms | Allocations: 5896)
+
+
+Started POST "/tickets" for ::1 at 2020-07-20 13:41:47 -0400
+Processing by TicketsController#create as HTML
+  Parameters: {"authenticity_token"=>"2LtRwaWFe6VccshQ+bG+aFEjulUrG8N+2eO7AnbtPcxa52rBx0JUBr2zj3I08LJDIKjiv4szSu0LDPy1qOZ8mQ==", "ticket"=>{"title"=>"Not displaying update", "description"=>"When I go to an update's show page I get this \"<%= @update.content =>\" instead of the content.", "project_id"=>"1", "project_attributes"=>{"name"=>""}}, "commit"=>"Create Ticket"}
+  [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tickets_controller.rb:9:in `create'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tickets_controller.rb:11:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/tickets_controller.rb:11:in `create'
+  [1m[36mProject Create (0.3ms)[0m  [1m[32mINSERT INTO "projects" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", ""], ["created_at", "2020-07-20 17:41:47.186362"], ["updated_at", "2020-07-20 17:41:47.186362"]]
+  ↳ app/controllers/tickets_controller.rb:11:in `create'
+  [1m[36mTicket Create (0.2ms)[0m  [1m[32mINSERT INTO "tickets" ("title", "description", "project_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Not displaying update"], ["description", "When I go to an update's show page I get this \"<%= @update.content =>\" instead of the content."], ["project_id", 2], ["user_id", 4], ["created_at", "2020-07-20 17:41:47.187961"], ["updated_at", "2020-07-20 17:41:47.187961"]]
+  ↳ app/controllers/tickets_controller.rb:11:in `create'
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tickets_controller.rb:11:in `create'
+Redirected to http://localhost:3000/tickets/2
+Completed 302 Found in 9ms (ActiveRecord: 1.5ms | Allocations: 6139)
+
+
+Started GET "/tickets/2" for ::1 at 2020-07-20 13:41:47 -0400
+Processing by TicketsController#show as HTML
+  Parameters: {"id"=>"2"}
+  Rendering tickets/show.html.erb within layouts/application
+  Rendered tickets/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 72)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 17.4ms | ActiveRecord: 0.0ms | Allocations: 5143)
+
+
+Started GET "/tickets/2/updates/new" for ::1 at 2020-07-20 13:41:58 -0400
+Processing by UpdatesController#new as HTML
+  Parameters: {"ticket_id"=>"2"}
+  [1m[36mTicket Load (0.1ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets" WHERE "tickets"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/updates_controller.rb:3:in `new'
+  Rendering updates/new.html.erb within layouts/application
+  [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/updates/new.html.erb:1
+  Rendered updates/new.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1520)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 13.5ms | ActiveRecord: 0.3ms | Allocations: 6980)
+
+
+Started POST "/updates" for ::1 at 2020-07-20 13:42:46 -0400
+Processing by UpdatesController#create as HTML
+  Parameters: {"authenticity_token"=>"OkICjPq+oU/ch+jTUyW6QzvknNtA/Tk1Yn9lprMOtl0FkQTprWJo0j0hBsH5d7PVZRV7/vBC2LDqp5BDtcvd6A==", "update"=>{"content"=>"It looks like you forgot the proper erb syntax. It should be \"<%= @update.content %>\" It's a common error that happens to us all. ", "ticket_id"=>"2"}, "commit"=>"Create Update"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/updates_controller.rb:9:in `create'
+  [1m[36mTicket Load (0.2ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets" WHERE "tickets"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/updates_controller.rb:9:in `create'
+  [1m[36mUpdate Create (0.4ms)[0m  [1m[32mINSERT INTO "updates" ("content", "user_id", "ticket_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "It looks like you forgot the proper erb syntax. It should be \"<%= @update.content %>\" It's a common error that happens to us all. "], ["user_id", 4], ["ticket_id", 2], ["created_at", "2020-07-20 17:42:46.065291"], ["updated_at", "2020-07-20 17:42:46.065291"]]
+  ↳ app/controllers/updates_controller.rb:9:in `create'
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/updates_controller.rb:9:in `create'
+Redirected to http://localhost:3000/updates/2
+Completed 302 Found in 18ms (ActiveRecord: 1.6ms | Allocations: 4593)
+
+
+Started GET "/updates/2" for ::1 at 2020-07-20 13:42:46 -0400
+Processing by UpdatesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUpdate Load (0.1ms)[0m  [1m[34mSELECT "updates".* FROM "updates" WHERE "updates"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/updates_controller.rb:17:in `show'
+  Rendering updates/show.html.erb within layouts/application
+  Rendered updates/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 111)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 8.6ms | ActiveRecord: 0.1ms | Allocations: 4956)
+
+
+Started GET "/tickets" for ::1 at 2020-07-20 13:42:54 -0400
+Processing by TicketsController#index as HTML
+  Rendering tickets/index.html.erb within layouts/application
+  [1m[36mTicket Load (0.2ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets"[0m
+  ↳ app/views/tickets/index.html.erb:3
+  [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:4
+  [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tickets/index.html.erb:4
+  Rendered tickets/index.html.erb within layouts/application (Duration: 4.3ms | Allocations: 2296)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 16.8ms | ActiveRecord: 0.4ms | Allocations: 6597)
+
+
