@@ -8,7 +8,9 @@ Rails.application.routes.draw do
  delete '/logout' => 'sessions#destroy'
 
   resources :updates
-  resources :tickets
+  resources :tickets do 
+   resources :updates, only: [:new, :index]  #website.com/tickets/1/updates/new <-nested route
+  end
   resources :projects
   resources :users
 
