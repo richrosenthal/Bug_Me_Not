@@ -7,7 +7,7 @@ class TicketsController < ApplicationController
 
   def create
     @ticket = Ticket.new(ticket_params)
-    @ticket.user_id = session[:id]
+    @ticket.user_id = session[:user_id]
     if @ticket.save
       redirect_to ticket_path(@ticket)
     else

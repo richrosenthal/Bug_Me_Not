@@ -1612,3 +1612,120 @@ Processing by SessionsController#welcome as HTML
 Completed 200 OK in 11ms (Views: 10.3ms | ActiveRecord: 0.0ms | Allocations: 4157)
 
 
+Started GET "/" for ::1 at 2020-07-20 09:23:37 -0400
+  [1m[35m (9.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#welcome as HTML
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 9.0ms | Allocations: 604)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 97ms (Views: 66.8ms | ActiveRecord: 0.0ms | Allocations: 10409)
+
+
+Started GET "/" for ::1 at 2020-07-20 11:11:21 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#welcome as HTML
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 0.3ms | Allocations: 61)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 23ms (Views: 21.8ms | ActiveRecord: 0.0ms | Allocations: 4201)
+
+
+Started GET "/tickets/new" for ::1 at 2020-07-20 11:11:25 -0400
+Processing by TicketsController#new as HTML
+  Rendering tickets/new.html.erb within layouts/application
+  [1m[36mProject Load (2.6ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  ↳ app/views/tickets/new.html.erb:19
+  Rendered tickets/new.html.erb within layouts/application (Duration: 112.2ms | Allocations: 3943)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 249ms (Views: 119.7ms | ActiveRecord: 38.5ms | Allocations: 24063)
+
+
+Started GET "/login" for ::1 at 2020-07-20 11:14:13 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 14.5ms | Allocations: 3940)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 30ms (Views: 28.7ms | ActiveRecord: 0.0ms | Allocations: 8106)
+
+
+Started POST "/login" for ::1 at 2020-07-20 11:14:19 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"HdUHkh2AplWnuYofBY27SX9rtTQk/bTjY20TKFZIye/crlH8EM0IovUC6rY5gjf3mb/zdB8MrVy8MnZY8ST6mQ==", "user"=>{"username"=>"richrosenthal", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "richrosenthal"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:15:in `create'
+Redirected to http://localhost:3000/login
+Completed 302 Found in 263ms (ActiveRecord: 1.0ms | Allocations: 7368)
+
+
+Started GET "/login" for ::1 at 2020-07-20 11:14:19 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 452)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 9.7ms | ActiveRecord: 0.0ms | Allocations: 4594)
+
+
+Started POST "/login" for ::1 at 2020-07-20 11:14:25 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"v1zun56aP31Gql24sLDbZx0tDvrtm2yZHCI9esr2QgiAj+j6yUb24KcMs6oa4tLxQ9zp310kjRyU+sifzDMpvQ==", "user"=>{"username"=>"Summer", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Summer"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:15:in `create'
+Redirected to http://localhost:3000/login
+Completed 302 Found in 245ms (ActiveRecord: 0.1ms | Allocations: 908)
+
+
+Started GET "/login" for ::1 at 2020-07-20 11:14:26 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 451)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 9.1ms | ActiveRecord: 0.0ms | Allocations: 4591)
+
+
+Started POST "/login" for ::1 at 2020-07-20 11:14:36 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"NvGcLhmSbr9mvATusBPxkuzEHIT8bOdA6SRyaE0VPXYJIppLTk6nIoca6vwaQfgEsjX7oUzTBsVh/IeNS9BWww==", "user"=>{"username"=>"Beth", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Beth"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:15:in `create'
+Redirected to http://localhost:3000/users/4
+Completed 302 Found in 246ms (ActiveRecord: 0.1ms | Allocations: 898)
+
+
+Started GET "/users/4" for ::1 at 2020-07-20 11:14:37 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:20:in `show'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 105)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 9.5ms | ActiveRecord: 0.2ms | Allocations: 5520)
+
+
+Started GET "/tickets/new" for ::1 at 2020-07-20 11:14:40 -0400
+Processing by TicketsController#new as HTML
+  Rendering tickets/new.html.erb within layouts/application
+  [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  ↳ app/views/tickets/new.html.erb:19
+  Rendered tickets/new.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1541)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 11.8ms | ActiveRecord: 0.1ms | Allocations: 5847)
+
+
+Started POST "/tickets" for ::1 at 2020-07-20 11:15:46 -0400
+Processing by TicketsController#create as HTML
+  Parameters: {"authenticity_token"=>"ThSYQD0YEdV4kfF9Bjx3tkvh6O9iLlNJS11GMRxH2mnMSKNAX98+dplQtl/LfXudOmqwBcIG2tqZsgGGwkybPA==", "ticket"=>{"title"=>"Can't save to database", "description"=>"undefined method `title' for nil:NilClass", "project_attributes"=>{"name"=>"Rails Project - Bug Me Not"}}, "commit"=>"Create Ticket"}
+  Rendering tickets/new.html.erb within layouts/application
+  [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  ↳ app/views/tickets/new.html.erb:19
+  Rendered tickets/new.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1542)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 31ms (Views: 15.3ms | ActiveRecord: 0.1ms | Allocations: 7645)
+
+
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTicket Load (0.4ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mTicket Load (0.2ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" LIMIT ?[0m  [["LIMIT", 11]]
