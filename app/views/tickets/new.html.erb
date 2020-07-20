@@ -4,6 +4,8 @@
   on a first come first serve basis.
 </p>
 
+<%= render partial: 'layouts/errors', locals: {object: @ticket} %>
+
 <%= form_for(@ticket) do |f| %>
   <div>
     <%= f.label :title %>
