@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :updates
   resources :tickets
   resources :projects
   root 'sessions#home'
