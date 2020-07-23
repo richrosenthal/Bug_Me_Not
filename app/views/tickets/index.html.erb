@@ -7,9 +7,18 @@
     <ul>
 
       <li>
-        <h3>Ticket: <%= t.title %></h3>
+        <h3>Ticket: <%= t.title %> - <%= t.user.username %></h3>
         <p>
-          <%= t.description %>
+         <h4>Description  <%= t.description %></h4>
+         <br />
+
+
+         <%= t.updates.each do |i| %>
+         <br />
+         <%= i.content %> - <%= i.user.username %>
+         <br />
+
+         <% end %>
         </p>
       </li>
     </ul>
