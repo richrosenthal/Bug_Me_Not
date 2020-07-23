@@ -9,7 +9,7 @@
   <% else %>
    <div>
        <%= f.label :ticket_id, "Select a Ticket to update" %>
-       <%= f.collection_select :ticket_id, Ticket.all, :id, :title, include_blank: true %>
+       <%= f.collection_select :ticket_id, Ticket.all, :id, :ticket_and_project, include_blank: true %>
    </div>
    <% end %>
 
