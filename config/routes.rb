@@ -7,8 +7,10 @@ Rails.application.routes.draw do
  post '/signup' => 'users#create'
  delete '/logout' => 'sessions#destroy'
 
+ get '/auth/google_oauth2/callback' => 'sessions#omniauth'
+
   resources :updates
-  resources :tickets do 
+  resources :tickets do
    resources :updates, only: [:new, :index]  #website.com/tickets/1/updates/new <-nested route
   end
   resources :projects
