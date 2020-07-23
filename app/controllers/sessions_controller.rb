@@ -8,7 +8,8 @@ class SessionsController < ApplicationController
    end
 
    def new
-   end 
+
+   end
 
    def create
      #does user exist?
@@ -22,4 +23,21 @@ class SessionsController < ApplicationController
        redirect_to login_path
      end
    end
+
+   def omniauth
+
+    @user = User.find_or_create_by(username: auth[:info][:email]) do |u|
+       u.password = SecureRandom.hex
+     end
+
+      session[:user_id] = @user.id
+      redirect_to user_path(@user)
+
+   end
+
+   private
+     def auth
+       request.env['omniauth.auth']
+     end
+
 end
