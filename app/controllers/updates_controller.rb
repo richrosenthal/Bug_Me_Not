@@ -5,7 +5,7 @@ class UpdatesController < ApplicationController
     else
       @update = Update.new
     end
-  end 
+  end
 
 
 
@@ -21,9 +21,15 @@ class UpdatesController < ApplicationController
 
   def show
     @update = Update.find_by_id(params[:id])
+    @user = User.find_by_id(params[:id])
   end
 
   def index
+    if @ticket = Ticket.find_by_id(params[:ticket_id])
+    @updates = @ticket.updates
+    else
+      @updates = Update.all
+    end  
   end
 
   private
