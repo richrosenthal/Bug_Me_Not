@@ -17,6 +17,12 @@ class TicketsController < ApplicationController
 
   def index
     @tickets = Ticket.all
+    @user = session[:user_id]
+
+  end
+
+  def show
+    @ticket = Ticket.find_by_id(params[:id])
   end
 
   private
