@@ -10,4 +10,7 @@ class Ticket < ApplicationRecord
 
   scope :order_by_alpha, -> {left_joins(:updates).group(:id).order('desc')}
 
+  def ticket_and_project
+   "#{title} - #{project.name}"
+  end
 end
