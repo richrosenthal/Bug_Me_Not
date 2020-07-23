@@ -8,4 +8,6 @@ class Ticket < ApplicationRecord
   validates :title, presence: true
   validates :description, presence: true
 
+  scope :order_by_alpha, -> {left_joins(:updates).group(:id).order('desc')}
+
 end
